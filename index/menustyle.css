@@ -10,13 +10,12 @@ body {
   color: #000;
 }
 
-/* ===================== HERO (HOMEPAGE FIX ADDED) ===================== */
+/* ================= HERO ================= */
 .hero {
   position: relative;
   color: white;
 }
 
-/* ✅ THIS IS THE FIX FOR YOUR HOMEPAGE TITLE */
 .hero h1 {
   font-family: 'IM Fell Great Primer SC', serif;
   font-weight: 400;
@@ -28,15 +27,15 @@ body {
   font-size: 3rem;
 }
 
-/* ===================== HERO (MENU PAGE) ===================== */
+/* ================= MENU HERO ================= */
 .menu-hero {
-  background: url('index/images/menuheader.jpg') center/cover no-repeat;
+  background: url('images/menuheader.jpg') center/cover no-repeat; /* ✅ FIXED */
   height: 380px;
   position: relative;
   color: white;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 .nav {
   position: absolute;
   top: 0;
@@ -49,122 +48,7 @@ body {
   align-items: center;
 }
 
-.menu-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 40px;
-}
-
-.menu-card {
-  position: relative;
-  width: 260px;
-  height: 340px;
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  display: block;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  transition: transform 0.25s ease;
-}
-
-.menu-card:hover {
-  transform: translateY(-6px);
-}
-
-/* FULL IMAGE BACKGROUND */
-.menu-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* DARK OVERLAY FOR TEXT READABILITY */
-.menu-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.7)
-  );
-  z-index: 1;
-}
-
-.menu-card h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font-size: 22px;
-  z-index: 2;
-  text-align: center;
-  width: 100%;
-  letter-spacing: 1px;
-}
-
-/* HOME ICON */
-.icon img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.icon img:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 8px #4fd1ff);
-}
-
-.icon img:active {
-  transform: scale(0.95);
-}
-
-/* MENU ICON */
-.menu a {
-  color: white;
-  font-size: 28px;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.menu a:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 8px #4fd1ff);
-}
-
-.menu a:active {
-  transform: scale(0.95);
-}
-
-/* HERO TEXT (MENU PAGE ONLY) */
-.menu-hero-text {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.menu-hero-text h1 {
-  font-family: 'IM Fell Great Primer SC', serif;
-  font-size: 3rem;
-  margin-bottom: 10px;
-  font-weight: 400;
-}
-
-.menu-hero-text p {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* ===================== MENU CARDS ===================== */
+/* ================= MENU CARDS ================= */
 .menu-container {
   padding: 40px 20px;
   display: flex;
@@ -173,7 +57,6 @@ body {
   align-items: center;
 }
 
-/* CARD BASE */
 .menu-card {
   width: 90%;
   max-width: 600px;
@@ -196,26 +79,80 @@ body {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* hover */
 .menu-card:hover {
   transform: scale(1.03);
   filter: brightness(1.2);
 }
 
-/* images for cards */
+/* ✅ FIXED IMAGE PATHS */
 .menu-card:nth-child(1) {
-  background-image: url('../images/jellyfish1.jpg');
+  background-image: url('images/jellyfish1.jpg');
 }
 
 .menu-card:nth-child(2) {
-  background-image: url('../images/jellyfish2.jpg');
+  background-image: url('images/jellyfish2.jpg');
 }
 
 .menu-card:nth-child(3) {
-  background-image: url('../images/jellyfish3.jpg');
+  background-image: url('images/jellyfish3.jpg');
 }
 
-/* ===================== FOOTER ===================== */
+/* ================= ICONS ================= */
+.icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.icon img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #4fd1ff);
+}
+
+.icon img:active {
+  transform: scale(0.95);
+}
+
+.menu a {
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.menu a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #4fd1ff);
+}
+
+.menu a:active {
+  transform: scale(0.95);
+}
+
+/* ================= HERO TEXT ================= */
+.menu-hero-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.menu-hero-text h1 {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.menu-hero-text p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ================= FOOTER ================= */
 footer {
   background-color: #0a1f38;
   padding: 50px 20px 30px;
@@ -225,7 +162,6 @@ footer {
   gap: 40px;
 }
 
-/* LEFT */
 .footer-left {
   display: flex;
   flex-direction: column;
@@ -253,10 +189,9 @@ footer {
 
 .socials a:hover {
   transform: scale(1.25);
-  color: #4fd1ff;           /* Nice ocean blue hover */
+  color: #4fd1ff;
 }
 
-/* INPUT */
 .subscribe-group input {
   width: 100%;
   max-width: 300px;
@@ -267,7 +202,6 @@ footer {
   color: white;
 }
 
-/* RIGHT */
 .footer-right {
   display: flex;
   flex-direction: column;
@@ -283,7 +217,7 @@ footer {
   object-fit: cover;
 }
 
-/* ===================== RESPONSIVE ===================== */
+/* ================= RESPONSIVE ================= */
 @media (min-width: 768px) {
   footer {
     flex-direction: row;
