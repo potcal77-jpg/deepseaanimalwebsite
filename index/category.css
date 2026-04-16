@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #000000;
+}
+
+/* Force small images (especially home icon) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===================== HERO - BRIGHT IMAGE ===================== */
+.menu-hero {
+  background: url('../index/images/categoryheader.jpg') center/cover no-repeat;
+  height: 420px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.menu-hero-text {
+  z-index: 2;
+  padding: 0 20px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);   /* Better readability on bright image */
+}
+
+.menu-hero-text h1 {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 3.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.menu-hero-text p {
+  font-size: 1.15rem;
+  opacity: 0.95;
+}
+
+/* ===================== NAV ===================== */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+  box-sizing: border-box;
+}
+
+/* Home Icon - Small */
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.icon img {
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.icon img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px #4fd1ff);
+}
+
+.icon img:active {
+  transform: scale(0.85);
+}
+
+/* Menu Icon */
+.menu a {
+  color: white;
+  font-size: 29px;
+  text-decoration: none;
+  padding: 5px 10px;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  transform: scale(1.15) rotate(8deg);
+  color: #4fd1ff;
+  filter: drop-shadow(0 0 8px #4fd1ff);
+}
+
+.menu a:active {
+  transform: scale(0.85);
+}
+
+/* ===================== ZONES GRID ===================== */
+.menu-container {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.menu-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.menu-image img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.menu-card h2 {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 1.95rem;
+  padding: 22px 24px 10px;
+  color: #0a1421;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.menu-card p {
+  padding: 0 24px 28px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #333333;
+}
+
+/* ===================== FOOTER - LOGO MOVED TO RIGHT ===================== */
+footer {
+  background-color: #0a1f38;
+  padding: 50px 20px 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-left h3 {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 1.45rem;
+  color: #a0d8ff;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.socials {
+  display: flex;
+  gap: 22px;
+}
+
+.socials a {
+  color: white;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials a:hover {
+  transform: scale(1.25);
+  color: #4fd1ff;           /* Nice ocean blue hover */
+}
+
+.subscribe-group input {
+  width: 100%;
+  max-width: 340px;
+  padding: 15px 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+}
+
+.subscribe-group input::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+
+/* Right side - Logo + Copyright (now clearly on the right) */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-right .logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.footer-right .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-right p {
+  margin: 0;
+  color: #a0d8ff;
+  font-size: 1.05rem;
+}
+
+/* ===================== RESPONSIVE - BETTER FOOTER LAYOUT ===================== */
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 40px 40px;
+  }
+
+  .footer-left {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .footer-right {
+    flex: 0 0 auto;
+    align-items: flex-end;     /* Logo and text aligned to the right */
+    text-align: right;
+  }
+
+  .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 60px 30px;
+  }
+
+  .menu-hero {
+    height: 480px;
+  }
+
+  .menu-hero-text h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-container {
+    gap: 35px;
+  }
+}
+
+/* ===================== SUBSCRIBE FORM ===================== */
+.subscribe-group form {
+  display: flex;
+  gap: 10px;
+  max-width: 340px;
+}
+
+.subscribe-group input {
+  flex: 1;
+  padding: 15px 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+}
+
+.subscribe-group input::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+
+.subscribe-group button {
+  padding: 15px 24px;
+  background: #4fd1ff;
+  color: #0a1421;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.subscribe-group button:hover {
+  background: #a0d8ff;
+  transform: translateY(-2px);
+}

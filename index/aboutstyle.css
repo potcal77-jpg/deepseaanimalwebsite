@@ -1,0 +1,260 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.about-hero {
+  height: 60vh;
+  min-height: 350px;
+  background: url("../index/images/aboutheader.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.about-hero h1 {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  color: white;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-text {
+  opacity: 0;
+  animation: fadeIn 0.9s ease forwards;
+}
+
+.about-text:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+
+.about-text:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 25px 0;
+  object-fit: cover;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.icon img,
+.menu a {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.icon img:hover,
+.menu a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #4fd1ff);
+}
+
+.icon img:active,
+.menu a:active {
+  transform: scale(0.95);
+}
+
+/* MAIN LAYOUT */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* TEXT */
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* IMAGE */
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 25px 0;
+  object-fit: cover;
+}
+
+.footer-right .logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden; /* THIS clips the image into a circle */
+  padding: 0; /* remove centering padding */
+}
+
+.footer-right .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.menu a {
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background-color: #0a1f38;
+  padding: 50px 20px 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-left h3 {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 1.4rem;
+  margin: 0 0 12px 0;
+  color: #a0d8ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Social Icons */
+.socials {
+  display: flex;
+  gap: 18px;
+  font-size: 28px;
+}
+
+.socials a {
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  color: #4fc3f7;
+}
+
+/* Subscribe */
+.subscribe-group input {
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 18px;
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.subscribe-group input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Right side - Logo + Copyright */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-right .logo {
+  width: 110px;
+  height: 110px;
+  background-color: #1e4a7a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.footer-right p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #a0d8ff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 40px 40px;
+  }
+
+  .footer-left {
+    flex: 1;
+  }
+
+  .footer-right {
+    flex: 0 0 auto;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .small-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero h1 {
+    font-size: 3.8rem;
+  }
+}
