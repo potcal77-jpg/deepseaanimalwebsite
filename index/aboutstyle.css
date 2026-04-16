@@ -8,7 +8,7 @@ body {
 .about-hero {
   height: 60vh;
   min-height: 350px;
-  background: url("../index/images/aboutheader.jpg") center/cover no-repeat;
+  background: url("/images/aboutheader.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
