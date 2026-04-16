@@ -65,29 +65,6 @@ body {
   align-items: center;
 }
 
-/* CARD */
-.menu-card {
-  width: 90%;
-  max-width: 600px;
-  height: 160px;
-
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-  color: white;
-
-  font-family: 'IM Fell Great Primer SC', serif;
-  font-size: 2rem;
-
-  background-size: cover;
-  background-position: center;
-
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
 .menu-card:hover {
   transform: scale(1.03);
   filter: brightness(1.2);
