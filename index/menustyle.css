@@ -30,7 +30,7 @@ body {
 
 /* ===================== HERO (MENU PAGE) ===================== */
 .menu-hero {
-  background: url('index/images/menuheader.jpg') center/cover no-repeat;
+  background: url('images/menuheader.jpg') center/cover no-repeat;
   height: 380px;
   position: relative;
   color: white;
