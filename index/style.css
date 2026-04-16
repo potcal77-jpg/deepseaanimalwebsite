@@ -5,12 +5,23 @@ body {
   color: #000000;
 }
 
+/* ================= HERO ================= */
+.hero {
+  background: url('images/header.jpg') center/cover no-repeat;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
 .hero h1 {
   font-family: 'IM Fell Great Primer SC', serif;
   font-size: 3.5rem;
   letter-spacing: 1px;
   color: white;
-
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
 }
@@ -26,126 +37,13 @@ body {
   }
 }
 
-.zone h2 {
-  opacity: 0;
-  animation: fadeIn 0.9s ease forwards;
-}
-
-.zone:nth-of-type(2) h2 {
-  animation-delay: 0.1s;
-}
-
-.zone:nth-of-type(3) h2 {
-  animation-delay: 0.2s;
-}
-
-.zone:nth-of-type(4) h2 {
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.zone p {
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
-
-.zone:nth-of-type(2) p {
-  animation-delay: 0.1s;
-}
-
-.zone:nth-of-type(3) p {
-  animation-delay: 0.2s;
-}
-
-.zone:nth-of-type(4) p {
-  animation-delay: 0.3s;
-}
-
-/* HERO */
-.hero {
-  background: url('../index/images/header.jpg') center/cover no-repeat;
-  height: 500px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-/* NAVBAR LAYOUT */
-.hero {
-  position: relative;
-}
-
+/* ================= NAV ================= */
 .nav {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-}
-
-/* HOME ICON */
-.icon img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-/* MENU ICON */
-.menu a {
-  color: white;
-  font-size: 28px;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-/* HOVER ANIMATIONS */
-.icon img:hover,
-.menu a:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 8px #4fd1ff);
-}
-
-/* CLICK ANIMATION */
-.icon img:active,
-.menu a:active {
-  transform: scale(0.95);
-}
-
-/* OPTIONAL: bigger click area */
-.icon a,
-.menu a {
-  padding: 5px;
-}
-/* Hover */
-.menu a:hover {
-  transform: scale(1.2) rotate(5deg);
-  filter: brightness(1.2);
-}
-
-/* Click */
-.menu a:active {
-  transform: scale(0.95);
-}
-
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box; /* THIS FIXES THE OVERFLOW */
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -153,25 +51,43 @@ body {
   z-index: 10;
 }
 
+/* Home icon */
+.icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.icon img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #4fd1ff);
+}
+
+.icon img:active {
+  transform: scale(0.95);
+}
+
+/* Menu icon */
 .menu a {
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.25s ease, filter 0.25s ease;
   padding: 5px;
 }
 
-.logo {
-  width: 110px;
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.menu a:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(1.2);
 }
 
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills the circle nicely */
-  border-radius: 50%; /* THIS makes it round */
+.menu a:active {
+  transform: scale(0.95);
 }
-/* ZONE SECTIONS */
+
+/* ================= ZONES ================= */
 .zone {
   padding: 50px 20px;
   text-align: center;
@@ -181,23 +97,47 @@ body {
 .zone h2 {
   font-family: 'IM Fell Great Primer SC', serif;
   font-size: 2.2rem;
-  margin: 0 0 20px 0;
-  color: #000000;
+  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  opacity: 0;
+  animation: fadeIn 0.9s ease forwards;
 }
 
-/* Three small circle images - Bigger & No borders */
+.zone:nth-of-type(2) h2 { animation-delay: 0.1s; }
+.zone:nth-of-type(3) h2 { animation-delay: 0.2s; }
+.zone:nth-of-type(4) h2 { animation-delay: 0.3s; }
+
+.zone p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-size: 1.08rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.zone:nth-of-type(2) p { animation-delay: 0.1s; }
+.zone:nth-of-type(3) p { animation-delay: 0.2s; }
+.zone:nth-of-type(4) p { animation-delay: 0.3s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================= CIRCLES ================= */
 .circle-container {
   display: flex;
   justify-content: center;
   gap: 22px;
-  margin: 15px 0 30px 0;
+  margin: 15px 0 30px;
 }
 
 .small-circle {
-  width: 90px;
-  height: 90px;
+  width: 95px;
+  height: 95px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
@@ -208,17 +148,7 @@ body {
   transform: scale(1.08);
 }
 
-/* Paragraphs */
-.zone p {
-  font-family: 'Inter', sans-serif;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.75;
-  font-size: 1.08rem;
-  color: #000000;
-}
-
-/* ==================== FOOTER ==================== */
+/* ================= FOOTER ================= */
 footer {
   background-color: #0a1f38;
   padding: 50px 20px 30px;
@@ -226,22 +156,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  position: relative;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.footer-left h3 {
-  font-family: 'IM Fell Great Primer SC', serif;
-  font-size: 1.4rem;
-  margin: 0 0 12px 0;
-  color: #a0d8ff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .socials {
@@ -259,7 +173,7 @@ footer {
 
 .socials a:hover {
   transform: scale(1.25);
-  color: #4fd1ff;           /* Nice ocean blue hover */
+  color: #4fd1ff;
 }
 
 /* Subscribe */
@@ -271,7 +185,6 @@ footer {
   border: 1px solid rgba(255,255,255,0.3);
   border-radius: 6px;
   color: white;
-  font-family: 'Inter', sans-serif;
   font-size: 1rem;
 }
 
@@ -279,7 +192,7 @@ footer {
   color: rgba(255,255,255,0.6);
 }
 
-/* Right side - Logo + Copyright */
+/* Footer right */
 .footer-right {
   display: flex;
   flex-direction: column;
@@ -288,15 +201,11 @@ footer {
   text-align: center;
 }
 
-.footer-right .logo {
+.footer-right img {
   width: 110px;
   height: 110px;
-  background-color: #1e4a7a;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4.5rem;
+  object-fit: cover;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
@@ -304,10 +213,9 @@ footer {
   margin: 0;
   font-size: 1.05rem;
   color: #a0d8ff;
-  font-family: 'Inter', sans-serif;
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
 @media (min-width: 768px) {
   footer {
     flex-direction: row;
@@ -316,22 +224,17 @@ footer {
     padding: 60px 40px 40px;
   }
 
-  .footer-left {
-    flex: 1;
-  }
-
   .footer-right {
-    flex: 0 0 auto;
     align-items: flex-end;
     text-align: right;
+  }
+
+  .hero h1 {
+    font-size: 3.8rem;
   }
 
   .small-circle {
     width: 100px;
     height: 100px;
-  }
-
-  .hero h1 {
-    font-size: 3.8rem;
   }
 }
