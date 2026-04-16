@@ -19,7 +19,7 @@ img {
 
 /* ===================== HERO - BRIGHT IMAGE ===================== */
 .menu-hero {
-  background: url('../index/images/categoryheader.jpg') center/cover no-repeat;
+  background: url('/images/categoryheader.jpg') center/cover no-repeat;
   height: 420px;
   position: relative;
   display: flex;
