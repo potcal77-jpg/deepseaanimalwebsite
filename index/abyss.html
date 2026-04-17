@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Abyss - Explore the World of the Deep</title>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="category.css">
+  <style>
+    .zone-hero {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/abyss-hero.jpg') center/cover no-repeat;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .creature-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .spin-btn {
+      background: #00ffff;
+      color: #000;
+      font-size: 1.4rem;
+      font-weight: 700;
+      padding: 18px 50px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 30px 0;
+      transition: all 0.3s;
+    }
+    .spin-btn:hover { transform: scale(1.05); background: #00ccff; }
+    .spin-btn.spinning { animation: spinAnim 1.2s linear infinite; }
+    @keyframes spinAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    .revealed-card {
+      background: rgba(0,0,0,0.75);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 420px;
+      margin: 30px auto;
+      color: white;
+      display: none;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+    }
+    .revealed-card img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+    .revealed-card h2 {
+      font-family: 'IM Fell Great Primer SC', serif;
+      font-size: 2.2rem;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="zone-hero">
+  <div class="nav">
+    <div class="icon"><a href="index.html"><img src="/images/home.png" alt="Home"></a></div>
+    <div class="menu"><a href="menu.html">☰</a></div>
+  </div>
+  <div>
+    <h1>THE ABYSS</h1>
+    <p>4,000–6,000 metres • Extreme cold and pressure</p>
+  </div>
+</header>
+
+<div class="creature-container">
+  <h2>Spin to Collect an Abyss Creature!</h2>
+  <button class="spin-btn" id="spinBtn">SPIN FOR A CREATURE</button>
+  
+  <div class="revealed-card" id="card">
+    <img id="creatureImg" src="" alt="">
+    <h2 id="creatureName"></h2>
+    <p id="creatureDesc"></p>
+    <button class="spin-btn" style="margin-top:20px; font-size:1rem; padding:12px 30px;" onclick="spinAgain()">SPIN AGAIN</button>
+  </div>
+</div>
+
+<footer>
+  <!-- Paste your exact footer from the category page here (the whole <footer> block) -->
+</footer>
+
+<script>
+  const creatures = [
+    { name: "Dumbo Octopus", img: "/images/abyss-dumbo-octopus.jpg", desc: "Flaps its ear-like fins to swim gracefully. One of the cutest creatures in the deep sea." },
+    { name: "Tripod Fish", img: "/images/abyss-tripod-fish.jpg", desc: "Stands on three long fins like a tripod. Waits patiently for food to drift by." },
+    { name: "Sea Cucumber", img: "/images/abyss-sea-cucumber.jpg", desc: "Can eject its organs to escape predators and regrow them later." },
+    { name: "Glass Squid", img: "/images/abyss-glass-squid.jpg", desc: "Transparent body with glowing eyes. Almost invisible in the dark abyss." }
+  ];
+
+  function spin() {
+    const btn = document.getElementById('spinBtn');
+    const card = document.getElementById('card');
+    
+    btn.classList.add('spinning');
+    btn.textContent = "SPINNING...";
+    card.style.display = "none";
+
+    setTimeout(() => {
+      const random = Math.floor(Math.random() * creatures.length);
+      const creature = creatures[random];
+
+      document.getElementById('creatureImg').src = creature.img;
+      document.getElementById('creatureName').textContent = creature.name;
+      document.getElementById('creatureDesc').textContent = creature.desc;
+
+      card.style.display = "block";
+      btn.classList.remove('spinning');
+      btn.textContent = "SPIN FOR ANOTHER CREATURE";
+    }, 1400);
+  }
+
+  function spinAgain() {
+    document.getElementById('card').style.display = "none";
+    spin();
+  }
+
+  document.getElementById('spinBtn').addEventListener('click', spin);
+</script>
+</body>
+</html>
