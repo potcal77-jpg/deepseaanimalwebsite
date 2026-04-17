@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twilight Zone - Explore the World of the Deep</title>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="category.css"> <!-- reuse your existing CSS -->
+  <style>
+    .zone-hero {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/twilight-hero.jpg') center/cover no-repeat;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .creature-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .spin-btn {
+      background: #00ffff;
+      color: #000;
+      font-size: 1.4rem;
+      font-weight: 700;
+      padding: 18px 50px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 30px 0;
+      transition: all 0.3s;
+    }
+    .spin-btn:hover { transform: scale(1.05); background: #00ccff; }
+    .spin-btn.spinning { animation: spinAnim 1.2s linear infinite; }
+    @keyframes spinAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    .revealed-card {
+      background: rgba(0,0,0,0.75);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 420px;
+      margin: 30px auto;
+      color: white;
+      display: none;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+    }
+    .revealed-card img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+    .revealed-card h2 {
+      font-family: 'IM Fell Great Primer SC', serif;
+      font-size: 2.2rem;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="zone-hero">
+  <div class="nav">
+    <div class="icon"><a href="index.html"><img src="/images/home.png" alt="Home"></a></div>
+    <div class="menu"><a href="menu.html">☰</a></div>
+  </div>
+  <div>
+    <h1>TWILIGHT ZONE</h1>
+    <p>200–1,000 metres • Where sunlight starts to fade</p>
+  </div>
+</header>
+
+<div class="creature-container">
+  <h2>Spin to Collect a Twilight Zone Creature!</h2>
+  <button class="spin-btn" id="spinBtn">SPIN FOR A CREATURE</button>
+  
+  <div class="revealed-card" id="card">
+    <img id="creatureImg" src="" alt="">
+    <h2 id="creatureName"></h2>
+    <p id="creatureDesc"></p>
+    <button class="spin-btn" style="margin-top:20px; font-size:1rem; padding:12px 30px;" onclick="spinAgain()">SPIN AGAIN</button>
+  </div>
+</div>
+
+<footer>
+  <!-- Paste your exact footer code from category.html here -->
+</footer>
+
+<script>
+  const creatures = [
+    {
+      name: "Lanternfish",
+      img: "/images/twilight-lanternfish.jpg",
+      desc: "Bioluminescent photophores light up its body. One of the most abundant vertebrates on Earth and a master of vertical migration."
+    },
+    {
+      name: "Viperfish",
+      img: "/images/twilight-viperfish.jpg",
+      desc: "Huge fang-like teeth and a glowing lure. An ambush predator that strikes with lightning speed in the dim light."
+    },
+    {
+      name: "Strawberry Squid",
+      img: "/images/twilight-strawberry-squid.jpg",
+      desc: "Ruby-red body with glowing spots. Its huge eyes help it navigate the twilight zone where light barely reaches."
+    },
+    {
+      name: "Fangtooth",
+      img: "/images/twilight-fangtooth.jpg",
+      desc: "Disproportionately massive teeth and jet-black body. Survives on rare meals in the cold, dimly lit waters."
+    }
+  ];
+
+  function spin() {
+    const btn = document.getElementById('spinBtn');
+    const card = document.getElementById('card');
+    
+    btn.classList.add('spinning');
+    btn.textContent = "SPINNING...";
+    card.style.display = "none";
+
+    setTimeout(() => {
+      const random = Math.floor(Math.random() * creatures.length);
+      const creature = creatures[random];
+
+      document.getElementById('creatureImg').src = creature.img;
+      document.getElementById('creatureName').textContent = creature.name;
+      document.getElementById('creatureDesc').textContent = creature.desc;
+
+      card.style.display = "block";
+      btn.classList.remove('spinning');
+      btn.textContent = "SPIN FOR ANOTHER CREATURE";
+    }, 1400);
+  }
+
+  function spinAgain() {
+    document.getElementById('card').style.display = "none";
+    spin();
+  }
+
+  // Initial button click
+  document.getElementById('spinBtn').addEventListener('click', spin);
+</script>
+</body>
+</html>
 
